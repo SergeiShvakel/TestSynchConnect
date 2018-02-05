@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build TestSynchConnect",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "ClientRequest//ClientRequest.cpp",
+                "ServerAsynch//ServerAsynch.cpp",
+                "TraceFunction//TraceFunction.cpp",
+                "ThreadPoolManager//threadjob.cpp",
+                "ThreadPoolManager//threadmanager.cpp",
+                "-std=c++11",
+                "-IC://Project//TestSynchConnect"
+                "-IC://Project//boost//include//boost-1_59",
+                "-LC://Project//boost//lib",
+                "-l:libboost_thread-mgw72-mt-d-1_59.a",
+                "-l:libboost_system-mgw72-mt-d-1_59.a",
+                "-l:libwsock32.a",
+                "-l:libws2_32.a",
+                "-g",
+                "-O0",
+                "-pthread",
+                "-o TestSynchConnect"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
