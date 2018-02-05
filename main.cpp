@@ -33,7 +33,8 @@ int main(int argc, char* argv[])
 	
 	char q = 0;
 	std::cin >> q;
-	if (q == 'q' || q == 'Q'){
+	if (q == 'q' || q == 'Q')
+	{
 		serverEcho.shutdown();
 	}
 
